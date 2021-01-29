@@ -142,15 +142,6 @@ function ago($time){
 ?><!DOCTYPE html>
 <html>
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-49854332-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-49854332-1');
-  </script>
   <title>👁👄👁 - CJ Trowbridge</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -226,14 +217,16 @@ function ago($time){
       
       <h2>Pages</h2> 
       <?php
+        // 
+        // Jetzt mit Categories link f=
+        //
         $Pages = count($Chunks);
-        for ($i = 1; $i <= $Pages; $i++) {
-          
+        for ($i = 1; $i <= $Pages; $i++) {     
           $Page = $_GET['p']+1;
           if($i == $Page){
-            echo '<a class="btn btn-small m-1 btn-info" href="?p='.$i.'">'.$i.'</a> ';
+            echo '<a class="btn btn-small m-1 btn-info" href="?p='.$i.'&f='.$_GET['f'].'">'.$i.'</a> ';
           }else{
-            echo '<a class="btn btn-small m-1 btn-outline-info" href="?p='.$i.'">'.$i.'</a> ';
+            echo '<a class="btn btn-small m-1 btn-outline-info" href="?p='.$i.'&f='.$_GET['f'].'">'.$i.'</a> ';
           }
         }
       ?>
